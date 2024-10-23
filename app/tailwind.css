@@ -4,9 +4,14 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-white;
+}
+@layer components {
+  .black-border {
+    @apply border-2 border-solid border-black;
+  }
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+  .cartoon-button {
+    @apply px-2 py-1 border-2 border-solid border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-sm active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all duration-150;
   }
 }
