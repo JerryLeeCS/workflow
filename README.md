@@ -2,6 +2,10 @@
 
 - 📖 [Remix docs](https://remix.run/docs)
 
+## Workflow App Picture
+
+![Workflow App Picture](./public/app.jpg)
+
 ## Development
 
 Run the dev server:
