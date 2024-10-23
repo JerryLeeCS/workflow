@@ -11,6 +11,7 @@ import {
   EdgeChange,
   ConnectionMode,
   useReactFlow,
+  MarkerType,
 } from "@xyflow/react";
 import { useMemo, useCallback, useRef } from "react";
 
@@ -76,6 +77,14 @@ export default function Flowchart() {
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}
+        defaultEdgeOptions={{
+          markerEnd: {
+            type: MarkerType.ArrowClosed,
+            width: 20,
+            height: 20,
+            color: "#000000",
+          },
+        }}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
