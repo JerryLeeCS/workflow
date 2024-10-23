@@ -1,8 +1,15 @@
 import { useCallback } from "react";
-import { Handle, Position } from "@xyflow/react";
+import { Handle, Position, useReactFlow } from "@xyflow/react";
+import { AiOutlineDelete } from "react-icons/ai";
 
-export default function WorkflowNode() {
+export default function WorkflowNode({ id }: { id: string }) {
+  const { deleteElements } = useReactFlow();
   const onChange = useCallback(() => {}, []);
+
+  const handleDelete = useCallback(() => {
+    deleteElements({ nodes: [{ id }] });
+  }, [deleteElements, id]);
+
   return (
     <>
       <Handle
@@ -16,7 +23,10 @@ export default function WorkflowNode() {
         style={{ width: "20px", height: "20px" }}
       />
       <div className="p-4 black-border bg-white">
-        <div className="mb-2">
+        <button className="absolute top-1 right-1 p-0" onClick={handleDelete}>
+          <AiOutlineDelete />
+        </button>
+        <div className="my-2">
           <label htmlFor="text" className="mr-2">
             Name:
           </label>
