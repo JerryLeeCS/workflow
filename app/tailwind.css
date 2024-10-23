@@ -14,4 +14,13 @@ body {
   .cartoon-button {
     @apply px-2 py-1 border-2 border-solid border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-sm active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all duration-150;
   }
+
+  .done-button {
+    @apply px-2 py-1 border-2 border-solid border-black bg-white;
+    @apply bg-green-500 text-white font-bold;
+  }
+
+  .done-button[data-done="true"] {
+    @apply bg-gray-300 text-gray-600;
+  }
 }
